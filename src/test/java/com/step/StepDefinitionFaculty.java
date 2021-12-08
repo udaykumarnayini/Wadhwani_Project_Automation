@@ -39,7 +39,7 @@ public class StepDefinitionFaculty{
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.get("https://learnwise.wfglobal.org");
-        Logger.info("LeaarnWise Faculty URL opened");
+        Logger.info("LearnWise Faculty URL opened");
 
         driver.manage().window().maximize();
         Logger.info("Browser Maximized");
