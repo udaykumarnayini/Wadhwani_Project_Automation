@@ -383,6 +383,37 @@ public class LoginPomStudent {
         return  driver.findElement(By.id("edit-field-assg-attempt-file-0-upload"));
     }
 
+    public static WebElement ClickOn_Reg_Submit1(WebDriver driver) {
+        return  driver.findElement(By.xpath("//span[text()='SUBMIT']"));
+    }
+    public static WebElement ClickOn_Reg_Submit2(WebDriver driver) {
+        return  driver.findElement(By.xpath("//span[text()='SUBMIT']"));
+    }
+    public static WebElement Enter_Reg_Name(WebDriver driver) {
+        return  driver.findElement(By.xpath("//input[@id='input_12']"));
+    }
+    public static WebElement Enter_Reg_Number(WebDriver driver) {
+        return  driver.findElement(By.xpath("//input[@id='input_17']"));
+    }
+    public static WebElement ClickOn_NextBtn_Reg(WebDriver driver) {
+        return  driver.findElement(By.xpath("//button[text()='NEXT']"));
+    }
+    public static WebElement Enter_GraduationYear(WebDriver driver) {
+        return  driver.findElement(By.xpath("//input[@id='input_47']"));
+    }
+    public static WebElement Select_Gender(WebDriver driver) {
+        return  driver.findElement(By.xpath("//h5[text()='Gender']//following::div[6]"));
+    }
+    public static WebElement Select_Stream(WebDriver driver) {
+        return  driver.findElement(By.xpath("//md-select[@id='select_52']"));
+    }
+    public static WebElement Select_StreamOption(WebDriver driver) {
+        return  driver.findElement(By.xpath("//div[text()=' Engineering ']"));
+    }
+    public static WebElement ClickOn_Submit3(WebDriver driver) {
+        return  driver.findElement(By.xpath("//button[text()='SUBMIT']"));
+    }
+
 
 
 }

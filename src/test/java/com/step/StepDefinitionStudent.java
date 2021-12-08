@@ -1,5 +1,6 @@
 package com.step;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -349,7 +350,7 @@ public class StepDefinitionStudent {
 
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(1000);
-        Email.sendKeys("Student"+ randomInt +"Saq@yopmail.com");
+        Email.sendKeys("Student"+ randomInt +"123Saq@yopmail.com");
         String NewMail= Email.getAttribute("value");
         System.out.println(NewMail);
 
@@ -365,15 +366,18 @@ public class StepDefinitionStudent {
         Thread.sleep(1000);
 
         LoginPomStudent.Click_On_DropDown_To_seeLanguage_Options(driver).click();
+        Thread.sleep(1000);
 
         LoginPomStudent.SelectLanguage_Option_Registration(driver).click();
 
         LoginPomStudent.ClickOn_checkBox(driver).click();
 
         LoginPomStudent.signInButton(driver).click();
+        Thread.sleep(3000);
 
         driver.get("https://yopmail.com/en/");
         LoginPomStudent.YOP_Login(driver).sendKeys(NewMail);
+
         LoginPomStudent.VerifyYOP_Mail(driver).click();
 
         Thread.sleep(3000);
@@ -381,6 +385,63 @@ public class StepDefinitionStudent {
         driver.switchTo().frame("ifmail");
         WebElement element = LoginPomStudent.Verify_YopMailId(driver);
         element.click();
+
+        Thread.sleep(1000);
+
+
+        ArrayList<String> switchTabs= new ArrayList<String> (driver.getWindowHandles());
+
+        driver.switchTo().window(switchTabs.get(0));
+
+
+        driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
+
+        LoginPomStudent.UserName(driver).sendKeys(NewMail);
+        LoginPomStudent.NextBtn(driver).click();
+        LoginPomStudent.Enter_PassKey(driver).sendKeys("pass");
+        LoginPomStudent.ClickOn_SignIn(driver).click();
+        Thread.sleep(3000);
+
+        LoginPomStudent.ClickOn_Reg_Submit1(driver).click();
+        Thread.sleep(2000);
+
+        LoginPomStudent.ClickOn_Reg_Submit2(driver).click();
+
+        Thread.sleep(2000);
+        LoginPomStudent.Enter_Reg_Name(driver).sendKeys("Mohit");
+
+
+        Thread.sleep(2000);
+        LoginPomStudent.Enter_Reg_Number(driver).sendKeys("9988776654");
+        Thread.sleep(2000);
+
+        LoginPomStudent.ClickOnAccept(driver).click();
+        Thread.sleep(1000);
+
+        LoginPomStudent.ClickOn_NextBtn_Reg(driver).click();
+        Thread.sleep(2000);
+
+        LoginPomStudent.Enter_GraduationYear(driver).sendKeys("2023");
+        Thread.sleep(2000);
+
+        LoginPomStudent.Select_Gender(driver).click();
+        Thread.sleep(2000);
+
+        LoginPomStudent.Select_Stream(driver).click();
+        Thread.sleep(2000);
+
+        LoginPomStudent.Select_StreamOption(driver).click();
+        Thread.sleep(2000);
+
+
+        LoginPomStudent.ClickOn_Submit3(driver).click();
+        Thread.sleep(2000);
+
+        LoginPomStudent.ClickOn_2ndStudentLogout(driver).click();
+        Thread.sleep(2000);
+        LoginPomStudent.ClickOn_2ndStudentLogout_Option(driver).click();
+
+
 
     }
     @Then("Student should edit Batch Id")
