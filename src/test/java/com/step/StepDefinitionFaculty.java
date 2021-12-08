@@ -5,6 +5,8 @@ import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -29,7 +31,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class StepDefinitionFaculty{
 
     WebDriver driver;
-
+    private static Logger Logger= LogManager.getLogger(StepDefinitionFaculty.class);
 
     LoginPom pom = new LoginPom();
     @Given("Faculty is on the Learnwise Login Page")
@@ -37,13 +39,18 @@ public class StepDefinitionFaculty{
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.get("https://learnwise.wfglobal.org");
+        Logger.info("LeaarnWise Faculty URL opened");
+
         driver.manage().window().maximize();
+        Logger.info("Browser Maximized");
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
     }
     @Then("Faculty click on chatbox")
     public void facultyClickOnChatbox() {
         LoginPom.chatBox(driver).click();
+        Logger.info("Clicked on chatbox");
+
     }
 
 
@@ -51,6 +58,7 @@ public class StepDefinitionFaculty{
     public void facultyShouldEnterValid(String string) {
 
         LoginPom.username(driver).sendKeys(string);
+
     }
 
     @Then("Faculty should verify success message")
@@ -59,6 +67,7 @@ public class StepDefinitionFaculty{
         String actualtext = LoginPom.actualText(driver).getText();
         System.out.println(actualtext);
         Assert.assertTrue("get accept", Expectedtest.equals(actualtext));
+
     }
     @Then("Faculty should close the Browser")
     public void facultyShouldCloseTheBrowser() {

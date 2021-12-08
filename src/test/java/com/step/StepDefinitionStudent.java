@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
@@ -27,12 +29,15 @@ public class StepDefinitionStudent {
     LoginPomStudent log=new LoginPomStudent();
     static WebDriver driver;
 
+    private static org.apache.logging.log4j.Logger Logger= LogManager.getLogger(StepDefinitionStudent.class);
+
 
     @Given("Student is on the Learnwise Login Page")
     public void studentIsOnTheLearnwiseLoginPage() {
         WebDriverManager.chromedriver().setup();
         driver=new ChromeDriver();
         driver.get("https://learnwise.wfglobal.org/#/IN/en/home/login");
+        Logger.info("Learnwise Student URL opened");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 
