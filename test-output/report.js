@@ -1,29 +1,33 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/feature/student.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/test/java/feature/faculty.feature");
 formatter.feature({
-  "name": "Login cucumber",
+  "name": "Login Wadhwani",
   "description": "",
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "name": "LW_TC_08_09 Verify new user is able to register and able to verify their mail id",
+  "name": "FA_01,FA_24Login Functionality with valid credentials",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@tag8"
+      "name": "@tag1"
     }
   ]
 });
 formatter.step({
-  "name": "Student is on the Learnwise Login Page",
+  "name": "Faculty is on the Learnwise Login Page",
   "keyword": "Given "
 });
 formatter.step({
-  "name": "student should login with Random Mail Id and should verify that mail",
+  "name": "Faculty should enter valid \"\u003cusername\u003e\"",
   "keyword": "When "
 });
 formatter.step({
-  "name": "Student should close the browser",
+  "name": "Faculty should verify success message",
+  "keyword": "Then "
+});
+formatter.step({
+  "name": "Faculty should close the Browser",
   "keyword": "Then "
 });
 formatter.examples({
@@ -33,56 +37,62 @@ formatter.examples({
   "rows": [
     {
       "cells": [
-        "username",
-        "",
-        "pass"
+        "username"
       ]
     },
     {
       "cells": [
-        "",
-        "",
-        ""
+        "qapital.faculty@yopmail.com"
       ]
     }
   ]
 });
 formatter.scenario({
-  "name": "LW_TC_08_09 Verify new user is able to register and able to verify their mail id",
+  "name": "FA_01,FA_24Login Functionality with valid credentials",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@tag8"
+      "name": "@tag1"
     }
   ]
 });
 formatter.step({
-  "name": "Student is on the Learnwise Login Page",
+  "name": "Faculty is on the Learnwise Login Page",
   "keyword": "Given "
 });
 formatter.match({
-  "location": "StepDefinitionStudent.studentIsOnTheLearnwiseLoginPage()"
+  "location": "StepDefinitionFaculty.facultyIsOnTheLearnwiseLoginPage()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "student should login with Random Mail Id and should verify that mail",
+  "name": "Faculty should enter valid \"qapital.faculty@yopmail.com\"",
   "keyword": "When "
 });
 formatter.match({
-  "location": "StepDefinitionStudent.studentShouldLoginWithRandomMailIdAndShouldVerifyThatMail()"
+  "location": "StepDefinitionFaculty.facultyShouldEnterValid(String)"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "Student should close the browser",
+  "name": "Faculty should verify success message",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinitionStudent.studentShouldCloseTheBrowser()"
+  "location": "StepDefinitionFaculty.facultyShouldVerifySuccessMessage()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "Faculty should close the Browser",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "StepDefinitionFaculty.facultyShouldCloseTheBrowser()"
 });
 formatter.result({
   "status": "passed"

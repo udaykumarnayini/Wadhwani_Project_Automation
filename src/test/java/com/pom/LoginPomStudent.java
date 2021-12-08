@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 public class LoginPomStudent {
 
 
-
     public static WebElement UserName(WebDriver driver) {
 
         return driver.findElement(By.id("input_0"));
