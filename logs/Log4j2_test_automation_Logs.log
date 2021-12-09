@@ -706,3 +706,33 @@
 [INFO ] 2021-12-09 15:35:21.482 [main] StepDefinitionFaculty - Browser Maximized
 [INFO ] 2021-12-09 15:35:21.769 [main] StepDefinitionFaculty - username entered
 [INFO ] 2021-12-09 15:35:21.872 [main] StepDefinitionFaculty - next Button clicked
+[INFO ] 2021-12-09 16:47:30.280 [main] StepDefinitionFaculty - LeaarnWise Faculty URL opened
+[INFO ] 2021-12-09 16:47:30.476 [main] StepDefinitionFaculty - Browser Maximized
+[INFO ] 2021-12-09 16:47:30.826 [main] StepDefinitionFaculty - username entered
+[INFO ] 2021-12-09 16:47:30.956 [main] StepDefinitionFaculty - next Button clicked
+[INFO ] 2021-12-09 16:47:32.432 [main] StepDefinitionFaculty - facultyPasskey is entered
+[INFO ] 2021-12-09 16:47:32.594 [main] StepDefinitionFaculty - facultynewPassword is entered
+[INFO ] 2021-12-09 16:47:33.557 [main] StepDefinitionFaculty - browser closed
+[INFO ] 2021-12-09 16:47:38.766 [main] StepDefinitionFaculty - LeaarnWise Faculty URL opened
+[INFO ] 2021-12-09 16:47:38.930 [main] StepDefinitionFaculty - Browser Maximized
+[INFO ] 2021-12-09 16:47:39.212 [main] StepDefinitionFaculty - username entered
+[INFO ] 2021-12-09 16:47:39.316 [main] StepDefinitionFaculty - next Button clicked
+[INFO ] 2021-12-09 16:47:40.722 [main] StepDefinitionFaculty - facultyPasskey is entered
+[INFO ] 2021-12-09 16:47:40.888 [main] StepDefinitionFaculty - facultynewPassword is entered
+[INFO ] 2021-12-09 16:47:41.690 [main] StepDefinitionFaculty - browser closed
+[INFO ] 2021-12-09 16:51:43.977 [main] StepDefinitionFaculty - LeaarnWise Faculty URL opened
+[INFO ] 2021-12-09 16:51:44.149 [main] StepDefinitionFaculty - Browser Maximized
+[INFO ] 2021-12-09 16:51:44.174 [main] StepDefinitionFaculty - done
+[INFO ] 2021-12-09 16:51:44.175 [main] StepDefinitionFaculty - comppleted
+[INFO ] 2021-12-09 16:51:44.490 [main] StepDefinitionFaculty - username entered
+[INFO ] 2021-12-09 16:51:44.610 [main] StepDefinitionFaculty - next Button clicked
+[INFO ] 2021-12-09 16:51:46.088 [main] StepDefinitionFaculty - facultyPasskey is entered
+[INFO ] 2021-12-09 16:51:46.248 [main] StepDefinitionFaculty - facultynewPassword is entered
+[INFO ] 2021-12-09 16:51:47.089 [main] StepDefinitionFaculty - browser closed
+[INFO ] 2021-12-09 16:53:48.870 [main] StepDefinitionFaculty - LeaarnWise Faculty URL opened
+[INFO ] 2021-12-09 16:53:49.021 [main] StepDefinitionFaculty - Browser Maximized
+[INFO ] 2021-12-09 16:53:49.390 [main] StepDefinitionFaculty - username entered
+[INFO ] 2021-12-09 16:53:49.507 [main] StepDefinitionFaculty - next Button clicked
+[INFO ] 2021-12-09 16:53:51.059 [main] StepDefinitionFaculty - facultyPasskey is entered
+[INFO ] 2021-12-09 16:53:51.190 [main] StepDefinitionFaculty - facultynewPassword is entered
+[INFO ] 2021-12-09 16:53:52.036 [main] StepDefinitionFaculty - browser closed
