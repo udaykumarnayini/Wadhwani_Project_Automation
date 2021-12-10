@@ -32,7 +32,6 @@ public class StepDefinitionFaculty{
 
     WebDriver driver;
     private static Logger Logger= LogManager.getLogger(StepDefinitionFaculty.class);
-
     LoginPom pom = new LoginPom();
     @Given("Faculty is on the Learnwise Login Page")
     public void facultyIsOnTheLearnwiseLoginPage() {
@@ -40,7 +39,6 @@ public class StepDefinitionFaculty{
         driver=new ChromeDriver();
         driver.get("https://learnwise.wfglobal.org");
         Logger.info("LeaarnWise Faculty URL opened");
-
         driver.manage().window().maximize();
         Logger.info("Browser Maximized");
         driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
@@ -54,9 +52,8 @@ public class StepDefinitionFaculty{
     }
 
 
-    @When("Faculty should enter valid {string}")
-    public void facultyShouldEnterValid(String string) {
-
+    @When("Faculty should enter valid username {string}")
+    public void facultyShouldEnterValidUsername(String string) {
         LoginPom.username(driver).sendKeys(string);
 
     }
@@ -145,16 +142,10 @@ public class StepDefinitionFaculty{
         LoginPom.dashboardButton(driver).click();
         Thread.sleep(5000);
     }
-
-
-
     @Then("Faculty should click on index Button")
     public void facultyShouldClickOnIndexButton() throws InterruptedException {
         LoginPom.indexButton(driver).click();
-
-
-    }
-
+        }
 
     @Then("Faculty should click on Resume Button")
     public void facultyShouldClickOnResumeButton() throws InterruptedException {
@@ -174,16 +165,9 @@ public class StepDefinitionFaculty{
     public void facultyShouldClickOnOtherCourseButton() {
         LoginPom.otherCourses(driver).click();
     }
-
-
-
-
-
-
     @And("Faculty enter the username{string}")
     public void facultyEnterTheUsername(String string) {
-
-        LoginPom.username(driver).sendKeys(string);
+    	LoginPom.username(driver).sendKeys(string);
 
     }
 
@@ -200,531 +184,193 @@ public class StepDefinitionFaculty{
         Thread.sleep(2000);
         System.out.println("Clicking On Course Module");
     }
-
-
-
-
-
-
-    //	 Click on create Batch and view details
-    //	Tag13
-
-
-    @When("User should click on courses")
-    public void userShouldClickOnCourses() throws Exception {
-
-        LoginPom.courses(driver).click();
+    @When("Faculty should click on courses")
+    public void facultyShouldClickOnCourses()  throws Exception {
+    	LoginPom.courses(driver).click();
         Thread.sleep(5000);
+    }
+        @Then("Faculty should click on foundationalcourse")
+        public void facultyShouldClickOnFoundationalcourse() {
         LoginPom.foundationalcourse(driver).click();
+        }
+        @Then("Faculty should click on createnewbatch")
+        public void facultyShouldClickOnCreatenewbatch() throws InterruptedException {
         LoginPom.createnewbatch(driver).click();
-
-
         Thread.sleep(2000);
     }
-
-
-
-//	//	Tag14
-
-    @When("click on create batch")
-    public void clickOnCreateBatch() throws Exception {
-        LoginPom.courses(driver).click();
+        @Then("Faculty should enter batch name {string}")
+        public void facultyShouldEnterBatchName(String string) {
+        LoginPom.batchName(driver).sendKeys(string);;
+        }
+        @Then("Faculty should enter batch number{string}")
+        public void facultyShouldEnterBatchNumber(String string) throws InterruptedException {
+        LoginPom.batchNumbers(driver).sendKeys(string);;
         Thread.sleep(5000);
-        LoginPom.foundationalcourse(driver).click();
-        LoginPom.createnewbatch(driver).click();
-
-        Thread.sleep(5000);
-        LoginPom.batchName(driver).sendKeys("Batch111");
-        LoginPom.batchNumbers(driver).sendKeys("12");
-
-        Thread.sleep(5000);
+        }
+        @Then("Faculty should click on create batch")
+        public void facultyShouldClickOnCreateBatch() {
         LoginPom.createbatchButton(driver).click();
-
-    }
-
-
-
-
-    //	Tag15
-
-
-
-    @When("User should click Create BATCH")
-    public void userShouldClickCreateBATCH() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourse(driver).click();
+        }
+        @Then("Faculty should click on copybatch")
+        public void facultyShouldClickOnCopybatch() throws InterruptedException {
         LoginPom.copyBatch(driver).click();
-
         Thread.sleep(3000);
-    }
-
-
-
-    //	Tag16
-
-
-    @When("User should click Copy BATCH")
-    public void userShouldClickCopyBATCH() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourse(driver).click();
-        LoginPom.copyBatch(driver).click();
-        LoginPom.batchName(driver).sendKeys("Batch200");
-
-        Thread.sleep(2000);
-
-    }
-
-
-
-    //	Tag17
-
-
-    @When("User should click on Start course")
-    public void userShouldClickOnStartCourse() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
+       }
+        @Then("Faculty should click on foundationalcourseStart Button")
+        public void facultyShouldClickOnFoundationalcourseStartButton() {
         LoginPom.foundationalcourseStartButton(driver).click();
+        }
+        @Then("Faculty should click on startcourseOk Button")
+        public void facultyShouldClickOnStartcourseOkButton() {
         LoginPom.startcourseOkButton(driver).click();
+        }
+        @Then("Faculty should click on Preparation Mode Button")
+        public void facultyShouldClickOnPreparationModeButton() throws InterruptedException {
         LoginPom.preparationMode(driver).click();
-
         Thread.sleep(3000);
-    }
-
-
-
-    //Tag18
-
-
-    @When("User should see the batch names in dropdown options")
-    public void userShouldSeeTheBatchNamesInDropdownOptions() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
+       }
+        @Then("Faculty should click on user batch switch")
+        public void facultyShouldClickOnUserBatchSwitch() throws InterruptedException {
         LoginPom.userbatchSwitch(driver).click();
-
-
         Thread.sleep(2000);
-
-
-    }
-
-
-    //Tag19
-
-
-    @When("click on mock test")
-    public void clickOnMockTest() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
-
-
+        }
+        @When("Faculty click on mock test")
+        public void facultyClickOnMockTest() throws InterruptedException {
         JavascriptExecutor js=(JavascriptExecutor)driver;
-
         WebElement MockTest=LoginPom.mockTest(driver);
         js.executeScript("arguments[0].scrollIntoView();",MockTest);
         LoginPom.mockTest(driver).click();
-
         Thread.sleep(3000);
-
-    }
-
-    @Then("click on play button")
-    public void clickOnPlayButton() throws Exception {
+        }
+        @Then("Faculty click on play button")
+        public void facultyClickOnPlayButton()  throws Exception {
         LoginPom.coursestartgreter(driver).click();
-
-
         Thread.sleep(3000);
-
         System.out.println("Clicking On Mock Test");
     }
 
-    //Tag20
-
-
     @When("Faculty should click on quizzes")
     public void facultyShouldClickOnQuizzes() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
-
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-
-
-    }
-
-
-    //Tag21
-
-
+       LoginPom.facultyquizzes(driver).click();
+        }
     @When("Faculty should click Quizzes")
     public void facultyShouldClickQuizzes() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
-
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-
-    }
+       LoginPom.facultyquizzes(driver).click();
+       }
 
     @Then("Faculty should click on take quizzes")
     public void facultyShouldClickOnTakeQuizzes() throws InterruptedException {
         LoginPom.facultytakequizzes(driver).click();
-
-
         System.out.println("Faculty should click on take quizzes");
         Thread.sleep(3000);
     }
-
-
-    //Tag22
-
-
-    @When("Faculty should should take Quizz")
-    public void facultyShouldShouldTakeQuizz() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-
-    }
+   
 
     @Then("Faculty should click on view quizz Results")
     public void facultyShouldClickOnViewQuizzResults() throws Exception {
-
-
-
-        LoginPom.viewquizzeresult(driver).click();
-
+    	LoginPom.viewquizzeresult(driver).click();
         System.out.println("Faculty should click on view quizz Results");
         Thread.sleep(3000);
     }
-
-
-    //Tag23
-
-    @When("Faculty should see th Practice Venture")
-    public void facultyShouldSeeThPracticeVenture() throws InterruptedException {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-
-        Thread.sleep(3000);
-        LoginPom.preparationMode(driver).click();
-
-        Thread.sleep(3000);
-    }
+    @When("Faculty should see the practice venture")
+    public void facultyShouldSeeThePracticeVenture()  throws InterruptedException {
+        LoginPom.facultypracticeventure(driver).isDisplayed();
+        }
 
     @Then("Faculty should click on Practice Venture")
     public void facultyShouldClickOnPracticeVenture() throws Exception {
         Thread.sleep(2000);
         LoginPom.facultypracticeventure(driver).click();
-
         System.out.println("Faculty should click on Practice Venture");
         Thread.sleep(3000);
     }
-
-    //	Tag24
-
     @When("Faculty should see th PV Milestones")
     public void facultyShouldSeeThPVMilestones() throws InterruptedException {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
+       LoginPom.facultypvmilestone(driver).isDisplayed();
     }
 
     @Then("Faculty should click on PV Milestones")
     public void facultyShouldClickOnPVMilestones() {
-        LoginPom.facultypracticeventure(driver).click();
-
-        System.out.println("Faculty should click on PV Milestones");
+        LoginPom.facultypvmilestone(driver).click();
+       System.out.println("Faculty should click on PV Milestones");
     }
-
-
-    //Tag25
-
-
-    @When("Faculty should take quizz")
-    public void facultyShouldTakeQuizz() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-        LoginPom.facultytakequizzes(driver).click();
-        LoginPom.quizzessubmit(driver).click();
-
-    }
+    
 
     @Then("Faculty should click on submit")
     public void facultyShouldClickOnSubmit() {
+    	 LoginPom.quizzessubmit(driver).click();
+    }
+   @Then("Faculty should click on yes Button")
+    public void facultyShouldClickOnYesButton() {
         LoginPom.quizzesyesbutton(driver).click();
-
-        System.out.println("Faculty should click on submit");
+        System.out.println("Faculty should click on yes");
     }
 
-    //	Tag26
-
-    @When("Faculty should take quizz again")
-    public void facultyShouldTakeQuizzAgain() throws Exception {
-        LoginPom.courses(driver).click();
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-        Thread.sleep(3000);
-
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-        LoginPom.facultytakequizzes(driver).click();
-
-
-    }
-
-    @Then("Faculty should Re-attempt quizz")
-    public void facultyShouldReAttemptQuizz() {
+   @Then("Faculty should click on quizzesyedittries")
+   public void facultyShouldClickOnQuizzesyedittries() {
         LoginPom.quizzesyedittries(driver).click();
+   }
+   @Then("Faculty should click on submit Button")
+   public void facultyShouldClickOnSubmitButton() {
         LoginPom.quizzessubmit(driver).click();
-
         System.out.println("Faculty should Re-attempt quizz");
-    }
-
-
-    //Tag27
-
-
-    @When("Faculty should see the report module")
-    public void facultyShouldSeeTheReportModule() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(2000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-
-
-        Thread.sleep(3000);
-        LoginPom.preparationMode(driver).click();
-
-
-
-    }
-
-
+        }
+   
     @Then("Faculty should click on Report Module")
     public void facultyShouldClickOnReportModule() throws Exception {
         LoginPom.reports(driver).click();
-
-
         Thread.sleep(3000);
-
         System.out.println("Faculty should click on Report Module");
-
-    }
-
-
-    //Tag28
-
-
-    @When("Faculty should see the Notification icon")
-    public void facultyShouldSeeTheNotificationIcon() throws InterruptedException {
+        }
+    @When("Faculty should click on Notification icon")
+    public void facultyShouldClickOnNotificationIcon() throws InterruptedException {
         LoginPom.notificationIcon(driver).click();
-
         Thread.sleep(3000);
-    }
-
-
-
-
-
-
-
-    //Tag29
-
-
-    @When("Faculty should see th Faculty Notes")
-    public void facultyShouldSeeThFacultyNotes() throws InterruptedException {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-
-        Thread.sleep(2000);
-        LoginPom.preparationMode(driver).click();
-
-    }
+        }
 
     @Then("Faculty should click on Faculty Notes")
     public void facultyShouldClickOnFacultyNotes() throws Exception {
         LoginPom.facultyNotes(driver).click();
-
         Thread.sleep(2000);
-
         System.out.println("Faculty should click on Faculty Notes");
-
-
     }
-    //Tag30
-
-
-    @When("Faculty should see the lessons")
-    public void facultyShouldSeeTheLessons() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-
-        Thread.sleep(10000);
-        LoginPom.preparationMode(driver).click();
-        LoginPom.facultyNotes(driver).click();
-
-        Thread.sleep(2000);
-    }
+    
 
     @Then("Faculty should click on lessons")
     public void facultyShouldClickOnLessons() {
         LoginPom.facultyLessons(driver).click();
-
-
         System.out.println("Faculty should click on lessons");
     }
 
-    //tag31
-
-
-    @When("Faculty should click on START COURSe")
-    public void facultyShouldClickOnSTARTCOURSe() throws InterruptedException {
-        LoginPom.courses(driver).click();
-        Thread.sleep(3000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-
-    }
+  
 
     @Then("Faculty should click on teaching")
     public void facultyShouldClickOnTeaching() throws Exception {
         LoginPom.teachingMode(driver).click();
         Thread.sleep(2000);
-
         System.out.println("Faculty should click on teaching");
     }
-
-    //Tag32
-
-    @When("Faculty should see the Manage Batches")
-    public void facultyShouldSeeTheManageBatches() throws InterruptedException {
-
-      LoginPom.manageBatchesButton(driver).click();
-        Thread.sleep(4000);
-    }
-
-
-    @Then("Faculty should click onedit symbol Manage Batches")
-    public void facultyShouldClickOneditSymbolManageBatches() {
-        System.out.println("Faculty should click onedit symbol Manage Batches");
-
-    }
-
-    //	Tag34
-
-
-    @When("Faculty should see the Chat box")
-    public void facultyShouldSeeTheChatBox() throws InterruptedException {
-       LoginPom.manageBatches(driver).click();
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
-
-    }
-
-    @Then("Faculty should click on Chat box")
-    public void facultyShouldClickOnChatBox() {
-        System.out.println("Faculty should click on Chat box");
-
-    }
-
-    //	tag35
-
-    @When("Faculty should see the Manage Students")
-    public void facultyShouldSeeTheManageStudents() throws InterruptedException {
-        WebDriverWait wait = new WebDriverWait(driver, 100);
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//a[contains(text(),'MANAGE BATCHES')]"))).click();
-
+    @When("Faculty should click on Manage Batches")
+    public void facultyShouldClickOnManageBatches() {
         LoginPom.manageBatches(driver).click();
-
-        LoginPom.activeBatches(driver).click();
     }
 
-
-    //	tag36
-
-
-    @When("Faculty should see the Run lessons")
-    public void facultyShouldSeeTheRunLessons() throws InterruptedException {
+    @When("Faculty should click on manage batches and active batches")
+    public void facultyShouldClickOnManageBatchesAndActiveBatches()  throws Exception {
         LoginPom.manageBatches(driver).click();
-
         LoginPom.activeBatches(driver).click();
 
     }
-
-
-
-    //	Tag37
-
-
-    @When("Faculty should see the No Upcoming Module")
-    public void facultyShouldSeeTheNoUpcomingModule() throws Exception {
-        LoginPom.manageBatches(driver).click();
-
-        LoginPom.activeBatches(driver).click();
-
+    @Then("Faculty should click on editsubmit")
+    public void facultyShouldClickOnEditsubmit() {
+    	LoginPom.editSubmit(driver).click();
     }
-
-
-
-
-    //	Tag42
-
-
-    @When("Faculty should see the Save and continue")
-    public void facultyShouldSeeTheSaveAndContinue() throws Exception {
-        LoginPom.courses(driver).click();
-        Thread.sleep(5000);
-        LoginPom.foundationalcourseStartButton(driver).click();
-        LoginPom.startcourseOkButton(driver).click();
-        LoginPom.preparationMode(driver).click();
-
-        Thread.sleep(3000);
-        LoginPom.facultyquizzes(driver).click();
-
+    @Then("Faculty should click on buttonsubmit")
+    public void facultyShouldClickOnButtonsubmit() {
+    LoginPom.buttonSubmit(driver).click();
     }
-
     @Then("Faculty should click save and submit")
     public void facultyShouldClickSaveAndSubmit() throws InterruptedException {
-        LoginPom.facultytakequizzes(driver).click();
-        LoginPom.editSubmit(driver).click();
-        LoginPom.buttonSubmit(driver).click();
         LoginPom.saveButton(driver).click();
         System.out.println("save and submit");
         driver.quit();
@@ -768,72 +414,25 @@ public class StepDefinitionFaculty{
     public void facultyShouldCloseTheBrowser1() {
         driver.quit();
     }
-
-    @Given("faculty should be on yopmail mail home page")
-    public void faculty_should_be_on_yopmail_mail_home_page() {
-
-        WebDriverManager.chromedriver().setup();
-        driver=new ChromeDriver();
-
-
-        driver.get("https://yopmail.com/");
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
-
-    }
-
-    @When("faculty enter mail id{string}")
-    public void faculty_enter_mail_id(String string) {
-
-        LoginPom.yopMailinput(driver).sendKeys("qapital.faculty11@yopmail.com");;
-
-    }
-
-    @Then("faculty should click on next arrow button")
-    public void faculty_should_click_on_next_arrow_button() {
-
-        LoginPom.yopMailrefresh(driver).click();
-
-    }
-
-    @Then("Faculty should copy temparory password")
-    public void faculty_should_copy_temparory_password() {
-        String t = "Email : qapital.faculty11@yopmail.com";
-
-        if ( driver.getPageSource().contains("Email : qapital.faculty11@yopmail.com")){
-            System.out.println("Text: " + t + " is present. ");
-        } else {
-            System.out.println("Text: " + t + " is not present. ");
-        }
-
-    }
-    @Then("Faculty click the Next Button")
-    public void facultyClickTheNextButton1() throws InterruptedException {
+    @Then("Faculty Should recieve temporary password in mail")
+    public void facultyShouldRecieveTemporaryPasswordInMail()  throws InterruptedException {
 
         WebElement Email=LoginPom.username(driver);
         Email.click();
-
-
-
         Email.sendKeys("qapital.faculty11@yopmail.com");
         String NewMail= Email.getAttribute("value");
         System.out.println(NewMail);
         LoginPom.nextBtn(driver).click();
-
         LoginPom.facultyPasskey(driver).sendKeys("865986");
         LoginPom.facultynewPassword(driver).sendKeys("pass");
         LoginPom.facultyconfirmPassword(driver).sendKeys("pass");
         LoginPom.facultySigninButton(driver).click();
         driver.get("https://yopmail.com/en/");
         LoginPom.YOP_Login(driver).sendKeys(NewMail);
-
         LoginPom.VerifyYOP_Mail(driver).click();
-
         Thread.sleep(3000);
-
         driver.switchTo().frame("ifmail");
         String t = "Email : qapital.faculty11@yopmail.com";
-
         if ( driver.getPageSource().contains("Email : qapital.faculty11@yopmail.com")){
             System.out.println("Text: " + t + " is present. ");
         } else {

@@ -5,12 +5,12 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.scenarioOutline({
-  "name": "FA_01,FA_24Login Functionality with valid credentials",
+  "name": "FA_29 Temporary password is click or not",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@tag1"
+      "name": "@tag54"
     }
   ]
 });
@@ -19,11 +19,7 @@ formatter.step({
   "keyword": "Given "
 });
 formatter.step({
-  "name": "Faculty should enter valid \"\u003cusername\u003e\"",
-  "keyword": "When "
-});
-formatter.step({
-  "name": "Faculty should verify success message",
+  "name": "Faculty Should recieve temporary password in mail",
   "keyword": "Then "
 });
 formatter.step({
@@ -37,23 +33,25 @@ formatter.examples({
   "rows": [
     {
       "cells": [
-        "username"
+        "username",
+        "password"
       ]
     },
     {
       "cells": [
-        "qapital.faculty@yopmail.com"
+        "",
+        ""
       ]
     }
   ]
 });
 formatter.scenario({
-  "name": "FA_01,FA_24Login Functionality with valid credentials",
+  "name": "FA_29 Temporary password is click or not",
   "description": "",
   "keyword": "Scenario Outline",
   "tags": [
     {
-      "name": "@tag1"
+      "name": "@tag54"
     }
   ]
 });
@@ -65,27 +63,17 @@ formatter.match({
   "location": "StepDefinitionFaculty.facultyIsOnTheLearnwiseLoginPage()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "Faculty should enter valid \"qapital.faculty@yopmail.com\"",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "StepDefinitionFaculty.facultyShouldEnterValid(String)"
-});
-formatter.result({
-  "status": "passed"
-});
-formatter.step({
-  "name": "Faculty should verify success message",
+  "name": "Faculty Should recieve temporary password in mail",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "StepDefinitionFaculty.facultyShouldVerifySuccessMessage()"
+  "location": "StepDefinitionFaculty.facultyShouldRecieveTemporaryPasswordInMail()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "Faculty should close the Browser",
@@ -95,6 +83,6 @@ formatter.match({
   "location": "StepDefinitionFaculty.facultyShouldCloseTheBrowser()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 });

@@ -14,12 +14,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class LoginPom {
-
-    public static WebElement batch101(WebDriver driver) {
-
-        return driver.findElement(By.xpath("//*[@id=\\\"content\\\"]/div[1]/div/div[76]/div/div[1]/div[3]/a\\n"));
-    }
-
+	
+	
     public static WebElement username(WebDriver driver) {
 
         return driver.findElement(By.id("input_0"));
@@ -214,6 +210,12 @@ public class LoginPom {
         return driver.findElement(By.xpath("//a[@title='Practice Venture']//following::a[1]"));
 
     }
+    public static WebElement facultypvmilestone(WebDriver driver) {
+        return driver.findElement(By.xpath("//*[@id=\"superfish-2\"]/li[6]/a"));
+
+    }
+    
+    
     public static WebElement quizzessubmit(WebDriver driver) {
         return driver.findElement(By.xpath("//input[@id='button_submit']"));
 

@@ -3,7 +3,7 @@ Feature: Login Wadhwani
   @tag1
   Scenario Outline: FA_01,FA_24Login Functionality with valid credentials
     Given Faculty is on the Learnwise Login Page
-    When Faculty should enter valid "<username>"
+    When Faculty should enter valid username "<username>"
     Then Faculty should verify success message
     Then Faculty should close the Browser
 
@@ -432,7 +432,9 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When User should click on courses
+    When Faculty should click on courses
+    Then Faculty should click on foundationalcourse
+    Then Faculty should click on createnewbatch
     Then Faculty should close the Browser
 
     Examples:
@@ -444,19 +446,26 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When click on create batch
+     When Faculty should click on courses
+    Then Faculty should click on foundationalcourse
+    Then Faculty should click on createnewbatch
+    Then Faculty should enter batch name "<batchname>"
+    Then Faculty should enter batch number"<batchnumber>"
+    Then Faculty should click on create batch
     Then Faculty should close the Browser
 
     Examples:
-      | username                    | password |
-      | qapital.faculty@yopmail.com | Pass@123 |
+      | username                    | password |batchname|batchnumber|
+      | qapital.faculty@yopmail.com | Pass@123 |Batch111|12|
 
   @tag34
   Scenario Outline: FA_46 Copy Batch Details
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When User should click Create BATCH
+    When Faculty should click on courses
+    Then Faculty should click on foundationalcourse
+    Then Faculty should click on copybatch
     Then Faculty should close the Browser
 
     Examples:
@@ -468,19 +477,25 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When User should click Copy BATCH
+   When Faculty should click on courses
+    Then Faculty should click on foundationalcourse
+    Then Faculty should click on copybatch
+    Then Faculty should enter batch name "<batchname>"
     Then Faculty should close the Browser
 
     Examples:
-      | username                    | password |
-      | qapital.faculty@yopmail.com | Pass@123 |
+      | username                    | password |batchname|
+      | qapital.faculty@yopmail.com | Pass@123 |Batch200|
 
   @tag36
   Scenario Outline: FA_50Clicking on Start Course
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When User should click on Start course
+     When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     Then Faculty should close the Browser
 
     Examples:
@@ -492,7 +507,11 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When User should see the batch names in dropdown options
+ When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+     Then Faculty should click on user batch switch
     Then Faculty should close the Browser
 
     Examples:
@@ -504,8 +523,12 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When click on mock test
-    Then click on play button
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty click on mock test
+    Then Faculty click on play button
     Then Faculty should close the Browser
 
     Examples:
@@ -517,6 +540,10 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     When Faculty should click on quizzes
     Then Faculty should close the Browser
 
@@ -529,6 +556,10 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
+     When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     When Faculty should click Quizzes
     Then Faculty should click on take quizzes
     Then Faculty should close the Browser
@@ -542,7 +573,11 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should should take Quizz
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty should click Quizzes
     Then Faculty should click on view quizz Results
     Then Faculty should close the Browser
 
@@ -555,8 +590,14 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should take quizz
+      When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty should click Quizzes
+    Then Faculty should click on take quizzes
     Then Faculty should click on submit
+    Then Faculty should click on yes Button
     Then Faculty should close the Browser
 
     Examples:
@@ -564,11 +605,15 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag43
-  Scenario Outline: FA_65Verify Faculty should view Practice Venture
+  Scenario Outline: FA_65Verify Faculty should click on Practice Venture
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see th Practice Venture
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty should see the practice venture
     Then Faculty should click on Practice Venture
     Then Faculty should close the Browser
     Examples:
@@ -580,6 +625,10 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     When Faculty should see th PV Milestones
     Then Faculty should click on PV Milestones
     Then Faculty should close the Browser
@@ -593,7 +642,10 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see th Faculty Notes
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     Then Faculty should click on Faculty Notes
     Then Faculty should close the Browser
 
@@ -606,7 +658,11 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the lessons
+     When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    Then Faculty should click on Faculty Notes
     Then Faculty should click on lessons
     Then Faculty should close the Browser
 
@@ -619,7 +675,10 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the report module
+     When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
     Then Faculty should click on Report Module
     Then Faculty should close the Browser
 
@@ -632,7 +691,7 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the Notification icon
+    When Faculty should click on Notification icon
     Then Faculty should close the Browser
 
     Examples:
@@ -644,8 +703,14 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should take quizz again
-    Then Faculty should Re-attempt quizz
+    When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty should click Quizzes
+    Then Faculty should click on take quizzes
+    Then Faculty should click on quizzesyedittries
+    Then Faculty should click on submit Button
     Then Faculty should close the Browser
 
     Examples:
@@ -657,7 +722,9 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should click on START COURSe
+     When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
     Then Faculty should click on teaching
     Then Faculty should close the Browser
 
@@ -670,19 +737,20 @@ Feature: Login Wadhwani
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the Manage Batches
+    When Faculty should click on Manage Batches
     Then Faculty should close the Browser
 
     Examples:
       | username                    | password |
       | qapital.faculty@yopmail.com | Pass@123 |
 
+ 
   @tag52
-  Scenario Outline: FA_87 Faculty should be in Run lessons
+  Scenario Outline:  Faculty should be in No Upcoming Module
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the Run lessons
+    When Faculty should click on manage batches and active batches
     Then Faculty should close the Browser
 
     Examples:
@@ -690,23 +758,18 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
   @tag53
-  Scenario Outline:  Faculty should be in No Upcoming Module
-    Given Faculty is on the Learnwise Login Page
-    And Faculty enter the username"<username>"
-    Then click the next button and enter password"<password>"
-    When Faculty should see the No Upcoming Module
-    Then Faculty should close the Browser
-
-    Examples:
-      | username                    | password |
-      | qapital.faculty@yopmail.com | Pass@123 |
-
-  @tag54
   Scenario Outline: FA_64 Faculty should save and submit quizz
     Given Faculty is on the Learnwise Login Page
     And Faculty enter the username"<username>"
     Then click the next button and enter password"<password>"
-    When Faculty should see the Save and continue
+  When Faculty should click on courses
+     Then Faculty should click on foundationalcourseStart Button
+     Then Faculty should click on startcourseOk Button
+     Then Faculty should click on Preparation Mode Button
+    When Faculty should click Quizzes
+    Then Faculty should click on take quizzes
+    Then Faculty should click on editsubmit
+    Then Faculty should click on buttonsubmit
     Then Faculty should click save and submit
     Then Faculty should close the Browser
 
@@ -715,12 +778,12 @@ Feature: Login Wadhwani
       | qapital.faculty@yopmail.com | Pass@123 |
 
 
-  @tag55
-  Scenario Outline: FA_29 Forgot password is click or not
+  @tag54
+  Scenario Outline: FA_29 Temporary password is click or not
     Given Faculty is on the Learnwise Login Page
-    Then Faculty click the Next Button
+    Then  Faculty Should recieve temporary password in mail
     Then Faculty should close the Browser
 
     Examples:
-      | username                    |password|
+      |username|password|
       |  ||
